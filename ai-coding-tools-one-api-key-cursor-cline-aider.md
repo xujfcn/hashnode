@@ -6,11 +6,13 @@ cover: ""
 domain: ""
 ---
 
+> Reviewed 2026-10-12: use the [current catalogue and prices](https://crazyrouter.com/en/pricing). Previous universal-discount, fixed-model-count and unverified free-credit claims are retired. Prices depend on the model, billing unit, account group and request time.
+
 ## The Problem
 
 In 2026, AI coding tools are essential. Cursor, Cline, Aider, Continue... the options are plentiful, but each requires separate API keys and different configurations.
 
-This guide shows you how to **use one API key across all AI coding tools**, accessing 624+ models (GPT-4o, Claude, DeepSeek, Gemini) and switching freely between them.
+This guide shows you how to **use one API key across all AI coding tools**, accessing compatible models in the current catalogue (GPT-4o, Claude, DeepSeek, Gemini) and switching freely between them.
 
 ## Why an API Gateway?
 
@@ -21,7 +23,7 @@ This guide shows you how to **use one API key across all AI coding tools**, acce
 | Per-tool configuration | Set up keys separately in Cursor and Cline |
 | Model switching friction | Changing providers means changing SDKs |
 
-An **API gateway** solves all of these. We'll use [Crazyrouter](https://crazyrouter.com?utm_source=hashnode&utm_medium=article&utm_campaign=dev_community) — fully OpenAI-compatible, 624+ models, one key.
+An **API gateway** solves all of these. We'll use [Crazyrouter](https://crazyrouter.com?utm_source=hashnode&utm_medium=article&utm_campaign=dev_community) — fully OpenAI-compatible, compatible models in the current catalogue, one key.
 
 ## Common Setup
 
@@ -60,7 +62,7 @@ Most tools will automatically pick up these settings.
 | Use Case | Model | Why |
 |----------|-------|-----|
 | Tab completion | `gpt-4o-mini` | Fast & cheap |
-| Chat | `claude-sonnet-4-20250514` | Best code understanding |
+| Chat | `claude-sonnet-4-6` | Best code understanding |
 | Composer | `deepseek-chat` | Best value |
 
 ### Pro Tip
@@ -81,13 +83,13 @@ You don't need Cursor's $20/month Pro plan. Set your own API key and **AI featur
 ```
 Base URL: https://crazyrouter.com/v1
 API Key:  sk-yourkey
-Model ID: claude-sonnet-4-20250514
+Model ID: claude-sonnet-4-6
 ```
 
 ### Task-Based Model Selection
 
 ```
-Complex refactoring  → claude-sonnet-4-20250514 (highest quality)
+Complex refactoring  → claude-sonnet-4-6 (highest quality)
 Daily coding         → deepseek-chat ($0.14/1M tokens)
 Bug fixes            → gpt-4o-mini (fast)
 Algorithm problems   → deepseek-reasoner (reasoning-focused)
@@ -107,7 +109,7 @@ Edit `~/.continue/config.json`:
     {
       "title": "Claude Sonnet (Crazyrouter)",
       "provider": "openai",
-      "model": "claude-sonnet-4-20250514",
+      "model": "claude-sonnet-4-6",
       "apiBase": "https://crazyrouter.com/v1",
       "apiKey": "sk-yourkey"
     },
@@ -144,7 +146,7 @@ export OPENAI_API_BASE="https://crazyrouter.com/v1"
 
 # Start with different models
 aider --model deepseek-chat          # Best value
-aider --model claude-sonnet-4-20250514  # Best quality
+aider --model claude-sonnet-4-6  # Best quality
 aider --model gpt-4o                 # Balanced
 ```
 
@@ -152,24 +154,11 @@ aider --model gpt-4o                 # Balanced
 
 ### Model Selection Guide
 
-| Complexity | Model | Cost (input/output per 1M tokens) |
-|-----------|-------|-----------------------------------|
-| High | claude-sonnet-4 | $3 / $15 |
-| High | gpt-4o | $2.5 / $10 |
-| Medium | deepseek-chat | $0.14 / $0.28 ← **recommended** |
-| Medium | gpt-4o-mini | $0.15 / $0.60 |
-| Low | gemini-2.0-flash | $0.10 / $0.40 |
 
 ### Real Cost Example
 
 100 AI coding assists/day (avg 500 input + 200 output tokens each):
 
-| Model | Monthly Cost |
-|-------|-------------|
-| `deepseek-chat` | ~$0.13 |
-| `gpt-4o-mini` | ~$0.59 |
-| `gpt-4o` | ~$9.75 |
-| `claude-sonnet-4` | ~$13.50 |
 
 DeepSeek V3: **~$0.13/month**. That's about 20 cents.
 

@@ -6,6 +6,8 @@ cover: https://raw.githubusercontent.com/xujfcn/crazyrouter-openclaw/main/screen
 domain: ""
 ---
 
+> Reviewed 2026-10-12: use the [current catalogue and prices](https://crazyrouter.com/en/pricing). Previous universal-discount, fixed-model-count and unverified free-credit claims are retired. Prices depend on the model, billing unit, account group and request time.
+
 ## Why Self-Host an AI Gateway?
 
 If you've used ChatGPT, Claude, and Gemini, you know the pain: **separate accounts, separate API keys, separate billing for each platform**.
@@ -20,7 +22,7 @@ That's 4 API keys, 4 invoices, 4 different API formats.
 
 **Crazyrouter + OpenClaw solves this:**
 
-- **Crazyrouter**: One API key for 300+ models (GPT, Claude, Gemini, DeepSeek, Kimi, etc.). OpenAI-compatible format, cheaper than official pricing.
+- **Crazyrouter**: One API key for compatible models in the current catalogue (GPT, Claude, Gemini, DeepSeek, Kimi, etc.). OpenAI-compatible format, cheaper than official pricing.
 - **OpenClaw**: Open-source AI gateway that turns AI models into your personal assistant, supporting Telegram, Discord, Slack, and more.
 
 Combined = **your own AI infrastructure**.
@@ -198,7 +200,7 @@ Crazyrouter charges per token, cheaper than official APIs. See [crazyrouter.com]
 
 One command gives you:
 
-✅ Private gateway for 300+ AI models
+✅ Private gateway for compatible models in the current catalogue
 ✅ Telegram AI assistant available 24/7
 ✅ Auto-start + crash recovery
 ✅ Unified API interface
